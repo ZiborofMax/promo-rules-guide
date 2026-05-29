@@ -207,7 +207,11 @@ async function copyPrompt(button) {
   }, 1200);
 }
 
-copyPromptButton.addEventListener("click", () => copyPrompt(copyPromptButton));
+copyPromptButton.addEventListener("click", (event) => {
+  event.preventDefault();
+  event.stopPropagation();
+  copyPrompt(copyPromptButton);
+});
 copyPromptStepButton.addEventListener("click", () => copyPrompt(copyPromptStepButton));
 
 renderExamples();

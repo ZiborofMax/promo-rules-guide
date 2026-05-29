@@ -48,14 +48,12 @@ button {
 
 .layout {
   display: grid;
-  grid-template-columns: minmax(360px, 500px) minmax(540px, 1fr);
   gap: 18px;
-  align-items: start;
 }
 
-.stack {
+.secondary-stack {
   display: grid;
-  gap: 18px;
+  gap: 12px;
 }
 
 .panel {
@@ -73,8 +71,7 @@ button {
   background: rgba(255, 255, 255, 0.64);
 }
 
-.panel-header.compact,
-.prompt-header {
+.panel-header.compact {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -134,9 +131,10 @@ button {
 
 .steps {
   display: grid;
-  gap: 18px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
   margin: 0;
-  padding: 24px 24px 26px 48px;
+  padding: 26px 24px 28px 48px;
 }
 
 .steps li {
@@ -171,6 +169,56 @@ button {
 
 .step-button:hover {
   background: var(--soft-press);
+}
+
+.fold-panel {
+  display: block;
+}
+
+.fold-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 20px 24px;
+  list-style: none;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.64);
+}
+
+.fold-summary::-webkit-details-marker {
+  display: none;
+}
+
+.fold-summary:hover {
+  background: rgba(255, 255, 255, 0.86);
+}
+
+.summary-title {
+  display: block;
+  color: var(--text);
+  font-size: 22px;
+  font-weight: 760;
+  line-height: 1.15;
+}
+
+.summary-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.chevron {
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid var(--muted);
+  border-bottom: 2px solid var(--muted);
+  transform: rotate(45deg);
+  transition: transform 160ms ease;
+}
+
+.fold-panel[open] .chevron {
+  transform: rotate(225deg);
 }
 
 .full-examples {
@@ -212,14 +260,8 @@ button {
   line-height: 1.55;
 }
 
-.prompt-panel {
-  min-height: calc(100vh - 122px);
-  display: flex;
-  flex-direction: column;
-}
-
 .prompt-text {
-  flex: 1;
+  max-height: 620px;
   margin: 0;
   padding: 22px 24px;
   overflow: auto;
@@ -237,12 +279,8 @@ button {
     padding: 14px;
   }
 
-  .layout {
-    grid-template-columns: 1fr;
-  }
-
-  .prompt-panel {
-    min-height: 640px;
+  .steps {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
@@ -256,9 +294,19 @@ button {
   }
 
   .panel-header.compact,
-  .prompt-header {
+  .fold-summary {
     align-items: flex-start;
     flex-direction: column;
+  }
+
+  .steps {
+    grid-template-columns: 1fr;
+    padding-left: 42px;
+  }
+
+  .summary-actions {
+    width: 100%;
+    justify-content: space-between;
   }
 
   .primary {
