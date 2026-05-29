@@ -4,7 +4,7 @@ const copyPromptStepButton = document.querySelector("#copyPromptStepButton");
 const fullExamples = document.querySelector("#fullExamples");
 
 const examples = window.RULE_EXAMPLES || [];
-const examplesUrl = window.location.href.split("#")[0];
+const examplesUrl = "https://ziborofmax.github.io/promo-rules-guide/";
 
 const prompt = `Ты — эксперт по подготовке формальных правил маркетинговых акций для БК «Лига Ставок».
 
