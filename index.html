@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Правила акций: инструкция и промпт</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <section class="shell" aria-label="Инструкция и промпт для правил акций">
+        <header class="topbar">
+          <h1>Гайд по подготовке правил акции</h1>
+        </header>
+
+        <section class="layout">
+          <div class="stack">
+            <article class="panel">
+              <div class="panel-header">
+                <p class="eyebrow">Инструкция</p>
+                <h2>Порядок работы</h2>
+              </div>
+              <ol class="steps">
+                <li>
+                  <strong>Заполните задачу на доске запусков акций.</strong>
+                  Создайте задачу с типом <b>Task</b>, в поле <b>Template</b> выберите <b>[P&amp;C] Communications</b>. После выбора шаблона в описании задачи появятся поля, которые нужно заполнить: даты, ЦА, механика, промокод, призовой фонд, лимиты, исключения и сроки начисления.
+                  <a class="step-button" href="https://jira.ligastavok.tech/secure/RapidBoard.jspa?rapidView=1166" target="_blank" rel="noreferrer">Открыть доску</a>
+                </li>
+                <li>
+                  <strong>Скопируйте промпт и вставьте его в ChatGPT.</strong>
+                  После ввода промпта ChatGPT должен ответить, что готов получить данные о новой акции из задачи.
+                  <button class="step-button" id="copyPromptStepButton" type="button">Скопировать промпт</button>
+                </li>
+                <li>
+                  <strong>Вставьте текст из задачи.</strong>
+                  Если данных не хватает, GPT сначала задаст уточняющие вопросы.
+                </li>
+                <li>
+                  <strong>Проверьте черновик перед публикацией.</strong>
+                  Сверьте даты, промокод, событие, призовой фонд, лимиты, исключения и юридический блок.
+                </li>
+              </ol>
+            </article>
+
+            <article class="panel">
+              <div class="panel-header compact">
+                <div>
+                  <p class="eyebrow">Примеры</p>
+                  <h2>Полные примеры правил</h2>
+                </div>
+              </div>
+              <div id="fullExamples" class="full-examples"></div>
+            </article>
+          </div>
+
+          <article class="panel prompt-panel">
+            <div class="panel-header prompt-header">
+              <div>
+                <p class="eyebrow">Промпт</p>
+                <h2>Промпт для генерации правил</h2>
+              </div>
+              <button class="primary" id="copyPromptButton" type="button">Скопировать</button>
+            </div>
+            <pre id="promptText" class="prompt-text" tabindex="0"></pre>
+          </article>
+        </section>
+      </section>
+    </main>
+
+    <script src="./examples-data.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
