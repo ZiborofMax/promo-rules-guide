@@ -14,55 +14,59 @@
         </header>
 
         <section class="layout">
-          <div class="stack">
-            <article class="panel">
-              <div class="panel-header">
-                <p class="eyebrow">Инструкция</p>
-                <h2>Порядок работы</h2>
-              </div>
-              <ol class="steps">
-                <li>
-                  <strong>Заполните задачу на доске запусков акций.</strong>
-                  Создайте задачу с типом <b>Task</b>, в поле <b>Template</b> выберите <b>[P&amp;C] Communications</b>. После выбора шаблона в описании задачи появятся поля, которые нужно заполнить: даты, ЦА, механика, промокод, призовой фонд, лимиты, исключения и сроки начисления.
-                  <a class="step-button" href="https://jira.ligastavok.tech/secure/RapidBoard.jspa?rapidView=1166" target="_blank" rel="noreferrer">Открыть доску</a>
-                </li>
-                <li>
-                  <strong>Скопируйте промпт и вставьте его в ChatGPT.</strong>
-                  После ввода промпта ChatGPT должен ответить, что готов получить данные о новой акции из задачи.
-                  <button class="step-button" id="copyPromptStepButton" type="button">Скопировать промпт</button>
-                </li>
-                <li>
-                  <strong>Вставьте текст из задачи.</strong>
-                  Если данных не хватает, GPT сначала задаст уточняющие вопросы.
-                </li>
-                <li>
-                  <strong>Проверьте черновик перед публикацией.</strong>
-                  Сверьте даты, промокод, событие, призовой фонд, лимиты, исключения и юридический блок.
-                </li>
-              </ol>
-            </article>
-
-            <article class="panel">
-              <div class="panel-header compact">
-                <div>
-                  <p class="eyebrow">Примеры</p>
-                  <h2>Полные примеры правил</h2>
-                </div>
-              </div>
-              <div id="fullExamples" class="full-examples"></div>
-            </article>
-          </div>
-
-          <article class="panel prompt-panel">
-            <div class="panel-header prompt-header">
-              <div>
-                <p class="eyebrow">Промпт</p>
-                <h2>Промпт для генерации правил</h2>
-              </div>
-              <button class="primary" id="copyPromptButton" type="button">Скопировать</button>
+          <article class="panel work-panel">
+            <div class="panel-header">
+              <p class="eyebrow">Инструкция</p>
+              <h2>Порядок работы</h2>
             </div>
-            <pre id="promptText" class="prompt-text" tabindex="0"></pre>
+            <ol class="steps">
+              <li>
+                <strong>Заполните задачу на доске запусков акций.</strong>
+                Создайте задачу с типом <b>Task</b>, в поле <b>Template</b> выберите <b>[P&amp;C] Communications</b>. После выбора шаблона в описании задачи появятся поля, которые нужно заполнить: даты, ЦА, механика, промокод, призовой фонд, лимиты, исключения и сроки начисления.
+                <a class="step-button" href="https://jira.ligastavok.tech/secure/RapidBoard.jspa?rapidView=1166" target="_blank" rel="noreferrer">Открыть доску</a>
+              </li>
+              <li>
+                <strong>Скопируйте промпт и вставьте его в ChatGPT.</strong>
+                После ввода промпта ChatGPT должен ответить, что готов получить данные о новой акции из задачи.
+                <button class="step-button" id="copyPromptStepButton" type="button">Скопировать промпт</button>
+              </li>
+              <li>
+                <strong>Вставьте текст из задачи.</strong>
+                Если данных не хватает, GPT сначала задаст уточняющие вопросы.
+              </li>
+              <li>
+                <strong>Проверьте черновик перед публикацией.</strong>
+                Сверьте даты, промокод, событие, призовой фонд, лимиты, исключения и юридический блок.
+              </li>
+            </ol>
           </article>
+
+          <div class="secondary-stack">
+            <details class="panel fold-panel">
+              <summary class="fold-summary">
+                <span>
+                  <span class="eyebrow">Промпт</span>
+                  <span class="summary-title">Промпт для генерации правил</span>
+                </span>
+                <span class="summary-actions">
+                  <button class="primary" id="copyPromptButton" type="button">Скопировать</button>
+                  <span class="chevron" aria-hidden="true"></span>
+                </span>
+              </summary>
+              <pre id="promptText" class="prompt-text" tabindex="0"></pre>
+            </details>
+
+            <details class="panel fold-panel">
+              <summary class="fold-summary">
+                <span>
+                  <span class="eyebrow">Примеры</span>
+                  <span class="summary-title">Полные примеры правил</span>
+                </span>
+                <span class="chevron" aria-hidden="true"></span>
+              </summary>
+              <div id="fullExamples" class="full-examples"></div>
+            </details>
+          </div>
         </section>
       </section>
     </main>
